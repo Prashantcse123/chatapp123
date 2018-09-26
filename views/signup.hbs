@@ -1,0 +1,85 @@
+
+<html>
+<head>
+    <title>Sign Up</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href=https://freshdesignweb.com/wp-content/themes/fv28/images/icon.ico />
+    <link rel="stylesheet" type="text/css" href="/signup/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="/signup/fdw-demo.css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+    <script>
+        function confirmPassword(){
+            console.log("I am called...")
+            var password=document.getElementById('password').value;
+            var repassword=document.getElementById('repassword').value;
+
+            if(password.trim() != repassword.trim()){
+                //document.write("Not Matched....")
+                console.log("Not Matched...")
+                return false;
+            }
+            else{
+               // document.write("Matched....")
+                console.log("Matched...")
+            return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="freshdesignweb-top">
+            <h1>
+                <a href="#">Chat Application</a>
+            </h1>
+        </div>
+        <div class="clr"></div>
+        <header>
+            <h1>
+                <strong>Sign Up</strong>
+            </h1>
+        </header>
+        <div class="form">
+            <form method="post" action="/users/signup" >
+                <p class="contact">
+                    <label for="name">Name</label>
+                </p>
+                <input id="name" name="name" placeholder="First and last name" required="" tabindex="1" type="text">
+                <p class="contact">
+                    <label for="email">Email</label>
+                </p>
+                <input id="email" name="email" placeholder="example@domain.com" required="" type="email">
+                <p class="contact">
+                    <label for="username">Create a username</label>
+                </p>
+                <input id="username" name="username" placeholder="username" required="" tabindex="2" type="text">
+                <p class="contact">
+                    <label for="password">Create a password</label>
+                </p>
+                <input type="password" id="password" name="password" required="">
+                <p class="contact">
+                    <label for="repassword">Confirm your password</label>
+                </p>
+                <input type="password" id="repassword" name="repassword" required="">
+                <select class="select-style gender" name="gender">
+                    <option value="select">I am..</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Other</option>
+                </select>
+                <br>
+                <br>
+                <p class="contact">
+                    <label for="phone">Mobile phone</label>
+                </p>
+                <input id="phone" name="phone" placeholder="phone number" required="" type="number"
+                <br>
+                <input type="submit" onclick="return confirmPassword()" value="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

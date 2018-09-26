@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Socket.IO chat</title>
+  <link rel="stylesheet" href="/chat.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/chat.js"></script>
+</head>
+
+<body>
+  <div class="split left">
+    <div class="centered">
+      <div id="wrapper">
+        <div id="menu">
+          <p class="welcome">Welcome,
+            <b>
+              <script>getValue()</script>
+            </b>
+          </p>
+          <p class="logout">
+            <a id="exit" name="exit" href="http://192.168.1.106:4000/users/profile">Exit Chat</a>
+          </p>
+          <div style="clear:both"></div>
+        </div>
+        <form action="localhost:8888/chat/">
+          <ul id="messages">
+          </ul>
+          <input type="hidden" value='getValue()' name="username" id="username">
+          <table>
+            <tr>
+              <td><textarea name="m" id="m" cols="50" rows="5"></textarea></td>
+              <td style="vertical-align:center"><input type="submit" value="Send"></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+    <div class="split right">
+      <!--chat started section-->
+      <div class="hide chat-box">
+        <div class="chat-head">
+          <h2>Chat Box</h2>
+          <a onclick=hideChatBox()>close chat</a>
+        </div>
+        <div class="chat-body">
+          <div class="msg-insert">
+            <input type="hidden" id="mname">
+            <input type="hidden" id="fname">
+            <div class="msg-send"> Send message </div>
+            <div class="msg-receive"> Received message </div>
+          </div>
+          <div class="chat-text">
+            <textarea placeholder="Send"></textarea>
+          </div>
+        </div>
+      </div>
+      <!-- chat end-->
+      <div class="centered">
+        <h2>Online Users</h2>
+        <ul id="onlineusers" style="width: 600px; height: 500px; overflow: auto">
+      </div>
+    </div>
+
+</body>
+
+</html>

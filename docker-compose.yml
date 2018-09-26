@@ -1,0 +1,31 @@
+version: '3.3'
+services:
+  web:
+    image: chatroom
+    build: ./
+    restart: always
+    ports:
+      - "4000:4000"
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    environment:
+      WAIT_HOSTS: localhost:27017
+    command: nodemon /chatroom/bin/www
+  chatserver:
+    image: chatroom
+    build: ./
+    ports:
+      - "8888:8888"
+    command: nodemon /chatroom/public/socket.io/socket_io.js 
+  mongodb:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - data-volume:/data/db
+    command: --smallfiles
+volumes:
+  data-volume:

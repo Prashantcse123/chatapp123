@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enter Your Name for Chat Room</title>
+</head>
+<h2><a href="/users/logout">Logout</a></h2>
+<input type="hidden" name="accessToken" value="<%= req.user.accessToken %>"/>
+<body>
+    <center><h1>Welcome to {{username}}</h1></center>
+    <br>
+    <br>
+    <form method="GET" action="http://192.168.1.106:8888/chat">
+        <center>
+    Enter Name:  <input type="text" name="username" id="username" placeholder="Enter Name">
+    <input type="submit" value="Go to Chat Room">
+    </center>
+    </form>
+</body>
+</html>

@@ -1,0 +1,5 @@
+module.exports={
+    clientID:'1002094633840-q2h519levrvdbedgdpaien0tkniopdti.apps.googleusercontent.com',
+    clientSecret:'tW0orNSVEIlj-QH2RhJ3oHUb',
+    callbackURL:'localhost:3000/users/profile'
+}
